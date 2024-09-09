@@ -22,7 +22,7 @@ function getComputerChoice() {
            computerScore++;
        } 
        else if (humanChoice === "paper" && computerChoice === "rock") {
-           console.log("You wpo");
+           console.log("You won");
            humanScore++;
        } 
        else if (humanChoice === "scissors" && computerChoice === "paper") {
