@@ -48,7 +48,7 @@ function declareWinner() {
     if (humanScore > computerScore) {
         finalResult = `You won the game! Final Score - Human: ${humanScore}, Computer: ${computerScore}`;
     }
-    if (humanScore < computerScore) {
+   else if (humanScore < computerScore) {
         finalResult = `Computer won the game! Final Score - Human: ${humanScore}, Computer: ${computerScore}`;
     }
      else {
