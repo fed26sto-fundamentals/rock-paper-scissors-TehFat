@@ -1,7 +1,72 @@
- 
+
+let humanScore = 0;
+let computerScore = 0;
+// game will be palyed for 5 turns
+let roundCount = 0;
+const maxRounds = 5;
+// make a function for computers random choice
+function getComputerChoice() {
+    const choicesArray = ['rock', 'paper', 'scissors'];
+    const randomIndex = Math.floor(Math.random() * choicesArray.length);
+    return choicesArray[randomIndex];
+}
+// function for playround
+function playRound(humanChoice, computerChoice) {
+    let result = '';
+
+    if ((humanChoice === 'rock' && computerChoice === 'scissors') ||
+        (humanChoice === 'scissors' && computerChoice === 'paper') ||
+        (humanChoice === 'paper' && computerChoice === 'rock')) {
+        result = `You won! ${humanChoice} beats ${computerChoice}`;
+        humanScore++;
+    } else if (humanChoice === computerChoice) {
+        result = "It's a tie!";
+    } else {
+        result = `You lose! ${computerChoice} beats ${humanChoice}`;
+        computerScore++;
+    }
+    return result;
+}
+// call the playround function in play game and assigen humainchoice 
+function playGame(humanChoice) {
+    if (roundCount < maxRounds){ 
+    const computerChoice = getComputerChoice();
+    const roundResult = playRound(humanChoice, computerChoice);
+    roundCount++;
+    // Update round result and score in the DOM and show resuls on webscreen
+    document.getElementById('roundResult').textContent = `You chose ${humanChoice}, computer chose ${computerChoice}. ${roundResult}`;
+    document.getElementById('score').textContent = `Score - Human: ${humanScore}, Computer: ${computerScore}`;
+
+   
+      if (roundCount === maxRounds) {
+        declareWinner();
+    }
+}
+}
+function declareWinner() {
+    let finalResult = '';
+    if (humanScore > computerScore) {
+        finalResult = `You won the game! Final Score - Human: ${humanScore}, Computer: ${computerScore}`;
+    }
+    if (humanScore < computerScore) {
+        finalResult = `Computer won the game! Final Score - Human: ${humanScore}, Computer: ${computerScore}`;
+    }
+     else {
+        finalResult = `"It's a tie!";! Final Score - Human: ${humanScore}, Computer: ${computerScore}`;
+    }
+
+    document.getElementById('finalResult').textContent = finalResult;
+
+    // Reset the scores for the next game
+    humanScore = 0;
+    computerScore = 0;
+    document.getElementById('score').textContent = `Score - Human: 0, Computer: 0`;
+}
+
+
 
   
-function getComputerChoice() {
+/*function getComputerChoice() {
     const choicesArray = ['rock', 'paper', 'scissors'];  // Store the choices in an array
     const randomIndex = Math.floor(Math.random() * choicesArray.length);  // Get a random index
     return choicesArray[randomIndex];  // Return random choice
@@ -45,10 +110,14 @@ function getComputerChoice() {
         console.log("You won");
         humanScore++;
     }
-    else { 
+    else if (humanChoice === computerChoice) {
+    	console.log("play again");
+	} 
+
+  /*  else { 
     console.log("play again");
-    }
-       console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore}`);
+    }*/
+      /* console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore}`);
    }
    
    const humanSelection = getHumanChoice();
@@ -74,6 +143,6 @@ function getComputerChoice() {
         }
     }
 
-    playGame();
+    playGame();*/
 
 

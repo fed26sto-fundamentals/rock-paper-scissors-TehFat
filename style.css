@@ -1,8 +1,54 @@
 h1 {
-    text-align: left;
+    display: flex;
+    background-color: beige;
+    line-height: 80px;
     font-weight: 900;
     font-size: 48px;
+    font-style: italic;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    color: #F9FAF8;
-    
+    color: black;
+    width: 700px;
+    /* Set specific width */
+    height: 100px;
+    /* Set specific height */
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+
+
+}
+
+.game-buttons {
+    text-align: center;
+    margin: 20px 0;
+    size: 0cqb;
+}
+
+.button {
+    font-size: 28px;
+    padding: 20px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: lightblue;
+    color: white;
+    border-radius: 5px;
+
+}
+
+.results {
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    background-color: rgb(255, 213, 213);
+    width: 800px;
+    /* Set specific width */
+    height: 220px;
+    /* Set specific height */
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+
 }

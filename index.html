@@ -5,10 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
    
-    <title>Document</title>
+    <title>Game</title>
 </head>
 <body>
-    <h1>Let Play a Game</h1>
+    <div> <h1>Lets Play a Game</h1></div><br><br>
+    
+   
+    <div class="game-buttons">
+        <button class="button" onclick="playGame('rock')">Rock</button>
+        <button class="button" onclick="playGame('paper')">Paper</button>
+        <button class="button" onclick="playGame('scissors')">Scissors</button>
+	</div>
+
+	<div class="results">
+    	<p id="roundResult">Round Result: </p>
+    	<p id="score">Score - Human: 0, Computer: 0</p>
+    	<p id="finalResult">Final Result: </p>
+	</div>
     
     <script src="script.js"></script>
     <script>
